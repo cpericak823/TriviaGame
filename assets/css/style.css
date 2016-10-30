@@ -1,0 +1,58 @@
+body {
+  background: url(../images/United_States_flag_map.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.jumbotron {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 60px;
+  background-color: transparent;
+  -webkit-animation: example 15s infinite;
+  animation: example 15s infinite;
+}
+
+@-webkit-keyframes example {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: blue;
+  }
+}
+
+@-moz-keyframes example {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: blue;
+  }
+}
+
+@-o-keyframes example {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: blue;
+  }
+}
+
+@keyframes example {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: blue;
+  }
+}
+
+.text {
+  background-color: rgb(176, 224, 230);
+  font-size: 18px;
+  text-align: center;
+}
