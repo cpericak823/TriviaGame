@@ -55,6 +55,7 @@ body {
   background-color: rgb(176, 224, 230);
   font-size: 18px;
   text-align: center;
+  opacity: 0.95;
 }
 
 #timer {
