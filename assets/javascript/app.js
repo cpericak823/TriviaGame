@@ -49,12 +49,7 @@ function twoMinutes() {
 
 }
 
-//update the DOM with the answers to the questions
-function finishGame() {
 
-    $('#results').html()
-
-}
 
 
 //Start the Game
@@ -80,3 +75,12 @@ $(document).ready(function() {
     //capture on click event and compare selected options to true answers
 
 });
+
+// //update the DOM with the results
+function finishGame() {
+    var resultsHtml = '';
+
+    $('#results').html()
+
+}
+
