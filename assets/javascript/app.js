@@ -67,8 +67,8 @@ $(document).ready(function() {
     function displayQuestions() {
         var questionsHtml = '';
         for (var i = 0; i < game.questions.length; i++) {
-            question = game.questions[i]
-            questionStr = question.question;
+            var question = game.questions[i]
+            var questionStr = question.question;
             questionsHtml = questionsHtml + '<div>' + questionStr + '<div>' + '<label> <input type="radio" name= "questionGroup' + i + '" value= "true"/> True </label>' + '<label><input type="radio" name= "questionGroup' + i + '" value= "false"/> False </label>' + '</div>' + '</div>';
 
         }
