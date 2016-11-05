@@ -1,6 +1,7 @@
 //Create global variable for counter
 var counter = 120;
 
+//Create global variable for game that lists questons objects
 var game = {
     questions: [{
         question: 'Does the US border four other countries?',
@@ -43,20 +44,18 @@ var incorrectVar = 0;
 var timer = setInterval(twoMinutes, 1000);
 console.log('timer started');
 
-//Create function for counter
+//Create global function for counter to decrease every second
 function twoMinutes() {
     $('#timer').html('Time Remaining:' + counter + ' seconds');
     counter--;
 
-    //use setTimeout when timer runs out, 
+    //if the counter is less than 0, end the game and display results page
     if (counter < 0) {
 
         console.log('timer ended');
 
-        //When the counter equals 0, call the finish game function to display the results and answers
         finishGame();
         console.log('display results');
-
     }
 
 }
@@ -64,8 +63,7 @@ function twoMinutes() {
 //Start the Game
 $(document).ready(function() {
 
-
-    //display all questions and radio buttons using jquery
+    //display all questions and radio buttons
     function displayQuestions() {
         var questionsHtml = '';
         for (var i = 0; i < game.questions.length; i++) {
@@ -81,14 +79,14 @@ $(document).ready(function() {
     displayQuestions();
     console.log('questions displayed');
 
-    //capture on click event of the button to end the game
+    //capture on click event of the submit button to end the game before counter ends
     $('.btn-group').on('click', function() {
         finishGame();
     })
 
 });
 
-// //update the DOM with the results
+//update the DOM with the results
 function finishGame() {
     clearInterval(timer);
     for (var i = 0; i < game.questions.length; i++) {
@@ -110,6 +108,8 @@ function finishGame() {
     $('#results').html('Results: ' + '<div>' + "Correct Answers: " + correctVar + '</div>' + '<div>' + "Incorrect Answers: " + incorrectVar + '</div>');
     $('#results').addClass('alert alert-warning');
     $('#questionsDisplayed').empty();
+
+    //Create a new button that allows a restart function
     $('.btn-group').html('Restart');
     // $('.btn-group').click('click', function() {
     //         twoMinutes();
