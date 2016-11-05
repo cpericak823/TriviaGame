@@ -86,7 +86,7 @@ $(document).ready(function() {
 
 });
 
-//update the DOM with the results
+//create a finish Game function that checks the answers and shows the results page
 function finishGame() {
     clearInterval(timer);
     for (var i = 0; i < game.questions.length; i++) {
@@ -96,8 +96,11 @@ function finishGame() {
         var trueInput = inputs.eq(0)
         var falseInput = inputs.eq(1)
 
+        //Check the selected buttons and compare to the answer. If true increase number correct
         if ((trueInput.is(":checked") && isAnswer) || (falseInput.is(":checked") && !isAnswer)) {
             correctVar++;
+
+            //otherwise increase number incorrect
         } else {
             incorrectVar++;
 
@@ -105,15 +108,10 @@ function finishGame() {
     }
     console.log(correctVar, incorrectVar);
 
+    //update DOM with results stats
     $('#results').html('Results: ' + '<div>' + "Correct Answers: " + correctVar + '</div>' + '<div>' + "Incorrect Answers: " + incorrectVar + '</div>');
-    $('#results').addClass('alert alert-warning');
-    $('#questionsDisplayed').empty();
+    $('.resultsDiv').addClass('alert alert-warning');
 
-    //Create a new button that allows a restart function
-    $('.btn-group').html('Restart');
-    // $('.btn-group').click('click', function() {
-    //         twoMinutes();
-    //         displayQuestions();
-
-    //     }
+    $('#questionsDisplayed').html('To Play Again, Refresh The Page');
+    $('.btn-group').empty();
 }
